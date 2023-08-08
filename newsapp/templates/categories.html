@@ -1,0 +1,100 @@
+<!-- Category News Slider Start -->
+
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 py-3">
+                    <div class="bg-light py-2 px-4 mb-3">
+                        <h3 class="m-0">Finance</h3>
+                    </div>
+                    <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
+                        {% for item in Finance %}
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="{{ item.image }}" style="object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="">{{item.category}}</a>
+                                    <span class="px-1">/</span>
+                                    <span>{{ item.date|date:'Y-m-d' }}</span>
+                                </div>
+                                <a class="h4 m-0" href="{{item.url}}">{{item.title}}</a>
+                            </div>
+                        </div>
+                        {% endfor %}      
+                    </div>
+                </div>
+                <div class="col-lg-6 py-3">
+                    <div class="bg-light py-2 px-4 mb-3">
+                        <h3 class="m-0">Technology</h3>
+                    </div>
+                    <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
+                        {% for item in Technology %}
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="{{ item.image }}" style="object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="{{item.url}}">{{item.category}}</a>
+                                    <span class="px-1">/</span>
+                                    <span>{{ item.date|date:'Y-m-d' }}</span>
+                                </div>
+                                <a class="h4 m-0" href="{{item.url}}">{{item.title}}</a>
+                            </div>
+                        </div>
+                        {% endfor %}  
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Category News Slider End -->
+
+        <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 py-3">
+                    <div class="bg-light py-2 px-4 mb-3">
+                        <h3 class="m-0">Entertainment</h3>
+                    </div>
+                    <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
+                        {% for item in Entertainment %}
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="{{ item.image }}" style="object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href={{item.url}}>{{item.category}}</a>
+                                    <span class="px-1">/</span>
+                                    <span>{{ item.date|date:'Y-m-d' }}</span>
+                                </div>
+                                <a class="h4 m-0" href="{{item.url}}">{{ item.title }}</a>
+                            </div>
+                        </div>
+                        {% endfor %}      
+                    </div>
+                </div>
+                <div class="col-lg-6 py-3">
+                    <div class="bg-light py-2 px-4 mb-3">
+                        <h3 class="m-0">Sport</h3>
+                    </div>
+                    <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
+                        {% for item in Sport %}
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="{{ item.image }}" style="object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href={{item.url}}>{{item.category}}</a>
+                                    <span class="px-1">/</span>
+                                    <span>{{ item.date|date:'Y-m-d' }}</span>
+                                </div>
+                                <a class="h4 m-0" href="{{item.url}}">{{item.title}}</a>
+                            </div>
+                        </div>
+                        {% endfor %}  
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

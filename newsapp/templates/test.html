@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+	{% block content %}
+		{% with art=articles %}
+			{% include 'mainslider.html' %}
+			<ul id="itemList"></ul>
+
+			<script>
+			const newItemData = {
+			    name: 'New Item',
+			    description: 'This is a new item created using the API.',
+			};
+			function postItemData(){
+				fetch('api/items/', {
+				    method: 'POST',
+				    headers: {
+				        'Content-Type': 'application/json',
+				    },
+				    body: JSON.stringify(newItemData),
+				})
+				.then(response => response.json())
+				.then(data => {
+				    console.log('New item created:', data);
+				})
+				.catch(error => {
+				    console.error('Error creating new item:', error);
+				});
+			}
+
+			
+			function getItemData(){
+				const itemListElement = document.getElementById('itemList');
+
+				fetch('api/items')
+				    .then(response => response.json())
+				    .then(data => {
+				        data.forEach(item => {
+				            const li = document.createElement('li');
+				            li.textContent = `${item.name}: ${item.description}`;
+				            itemListElement.appendChild(li);
+				        });
+				    })
+				    .catch(error => {
+				        console.error('Error fetching items:', error);
+				    });
+				   };
+			getItemData()
+		</script>
+		<video data-account="5348771529001"
+       id="p-5348771529001-6332591545112_html5_api"
+       vms-video-id="6332591545112"
+       data-embed="default"
+       class="vjs-tech"
+       tabindex="-1"
+       preload="auto"
+       aria-labelledby="vjs-dock-title-1"
+       aria-describedby="vjs-dock-description-2"
+       poster="https://content.api.news/v3/images/bin/0c23d906aad24e983e654e71ac594f4f">
+    <source src="https://www.news.com.au/c1322c92-57b1-4eea-9af6-67fe980bcefc" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<iframe src="https://d-26561335131962436411.ampproject.net/2307212240000/frame.html" name="{&quot;host&quot;:&quot;d-26561335131962436411.ampproject.net&quot;,&quot;bootstrap&quot;:&quot;https://3p.ampproject.net/2307212240000/vendor/ima-video.js&quot;,&quot;type&quot;:&quot;ima-video&quot;,&quot;count&quot;:1,&quot;attributes&quot;:{&quot;tag&quot;:&quot;https://pubads.g.doubleclick.net/gampad/ads?ad_rule=1&amp;cmsid=2492325&amp;correlator=1691486153831&amp;cust_params=pagetype%3DAMPArticle&amp;description_url=https%3A%2F%2Fwww.foxsports.com.au%2Fafl%2Fafl-grand-final-entertainment-2023-who-is-performing-at-the-afl-grand-final-pregame-crowded-house-withdraws-kiss-latest-news%2Fnews-story%2Fa8cae862e4420ef7461f34df54ad37bf&amp;env=vp&amp;gdfp_req=1&amp;impl=s&amp;iu=%2F21780812979%2Ffoxsports%2Fstory-amp%2Fafl%2Fstory&amp;output=xml_vast3&amp;sz=640x480&amp;unviewed_position_start=1&amp;vid=864033&quot;,&quot;poster&quot;:&quot;https://www.foxsports.com.au/pmd/images/2023/08/08/864034_640x360_large_20230808142510.jpg&quot;,&quot;sourceChildren&quot;:&quot;[[\&quot;SOURCE\&quot;,{\&quot;src\&quot;:\&quot;https://foxsportspmd-a.akamaihd.net/free/nogeoblock/2023/08/08/DVU_080823_CUNNINGTON_RETIREMENT_SPEECH_202308081419/DVU_080823_CUNNINGTON_RETIREMENT_SPEECH_202308081419_2628.mp4\&quot;,\&quot;type\&quot;:\&quot;video/mp4\&quot;}]]&quot;,&quot;width&quot;:1.77,&quot;height&quot;:1,&quot;_context&quot;:{&quot;ampcontextVersion&quot;:&quot;2307212240000&quot;,&quot;ampcontextFilepath&quot;:&quot;https://3p.ampproject.net/2307212240000/ampcontext-v0.js&quot;,&quot;sourceUrl&quot;:&quot;https://www.foxsports.com.au/afl/afl-grand-final-entertainment-2023-who-is-performing-at-the-afl-grand-final-pregame-crowded-house-withdraws-kiss-latest-news/news-story/a8cae862e4420ef7461f34df54ad37bf&quot;,&quot;referrer&quot;:&quot;&quot;,&quot;canonicalUrl&quot;:&quot;https://www.foxsports.com.au/afl/afl-grand-final-entertainment-2023-who-is-performing-at-the-afl-grand-final-pregame-crowded-house-withdraws-kiss-latest-news/news-story/a8cae862e4420ef7461f34df54ad37bf&quot;,&quot;pageViewId&quot;:&quot;4161&quot;,&quot;location&quot;:{&quot;href&quot;:&quot;https://www.foxsports.com.au/afl/afl-grand-final-entertainment-2023-who-is-performing-at-the-afl-grand-final-pregame-crowded-house-withdraws-kiss-latest-news/news-story/a8cae862e4420ef7461f34df54ad37bf&quot;},&quot;startTime&quot;:1691486399760,&quot;tagName&quot;:&quot;AMP-IMA-VIDEO&quot;,&quot;mode&quot;:{&quot;localDev&quot;:false,&quot;development&quot;:false,&quot;esm&quot;:false,&quot;test&quot;:false,&quot;rtvVersion&quot;:&quot;012307212240000&quot;},&quot;canary&quot;:false,&quot;hidden&quot;:false,&quot;initialLayoutRect&quot;:{&quot;left&quot;:24,&quot;top&quot;:330,&quot;width&quot;:874,&quot;height&quot;:494},&quot;domFingerprint&quot;:&quot;1644516663&quot;,&quot;experimentToggles&quot;:{&quot;canary&quot;:false,&quot;a4aProfilingRate&quot;:false,&quot;doubleclickSraExp&quot;:false,&quot;doubleclickSraReportExcludedBlock&quot;:false,&quot;flexAdSlots&quot;:true,&quot;flexible-bitrate&quot;:false,&quot;ios-fixed-no-transfer&quot;:false,&quot;story-ad-placements&quot;:false,&quot;story-disable-animations-first-page&quot;:true,&quot;story-load-inactive-outside-viewport&quot;:true,&quot;amp-sticky-ad-to-amp-ad-v4&quot;:false,&quot;story-video-cache-apply-audio&quot;:false,&quot;amp-story-subscriptions&quot;:true,&quot;amp-story-first-page-max-bitrate&quot;:false,&quot;story-load-first-page-only&quot;:true,&quot;story-ad-page-outlink&quot;:false,&quot;amp-geo-ssr&quot;:true,&quot;story-remote-localization&quot;:true,&quot;attribution-reporting&quot;:false},&quot;sentinel&quot;:&quot;0-14132878173895445024&quot;},&quot;type&quot;:&quot;ima-video&quot;}}" width="1.77" height="1" allowfullscreen="true" scrolling="no" style="border: medium;" allow="sync-xhr 'none';autoplay;" sandbox="allow-top-navigation-by-user-activation allow-popups-to-escape-sandbox allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts" data-amp-3p-sentinel="0-14132878173895445024" title="IMA video" class="i-amphtml-fill-content"></iframe>
+
+		<video data-account="5348771529001" id="p-5348771529001-6332591545112_html5_api" vms-video-id="6332591545112" data-embed="default" class="vjs-tech" tabindex="-1" preload="none" aria-labelledby="vjs-dock-title-1" aria-describedby="vjs-dock-description-2" poster="https://content.api.news/v3/images/bin/0c23d906aad24e983e654e71ac594f4f" src="blob:https://www.news.com.au/c1322c92-57b1-4eea-9af6-67fe980bcefc"></video>
+		<p>It has been a week since Brisbane’s flagship Myer store bid its final farewell, and the effects have been immediate on the once-bustling “Myer Centre”.</p>
+<p>As the dust settles, Queen Street Mall, now known as “Uptown”, has undergone a pastel-hued transformation, but shoppers say it’ll take more than a trendy colour scheme to lure them back.</p>
+<p>Unfortunately, the enthusiastic marketing campaign, complete with merchandised lollipops, banners, posters, influencer endorsements, hasn’t quite translated into booming foot traffic. </p>
+<p>As reported by the <i><a class="body-link" data-tgev="event119" data-tgev-container="bodylink" data-tgev-label="news" data-tgev-metric="ev" data-tgev-order="e951dbba93e219a07eec2f13dc18350c" href="https://www.couriermail.com.au/news/queensland/shoppers-disappear-sales-plummet-uptown-becomes-ghost-town-after-myer-exit/news-story/e951dbba93e219a07eec2f13dc18350c" target="_self">Courier Mail</a></i>, only a handful of tradies and city workers were spotted munching away in the desolate food court this week, while stores like Country Road, Lincraft, and Portmans struggled to attract the usual bustling crowds seen at other prominent Brisbane shopping centres like Chermside and Carindale.</p>
+<p>The telltale signs of Myer’s departure are everywhere, with all entrances boarded up, shelves stripped bare, and any remaining stock from the clearance sale relocated elsewhere. </p>
+<p>The Myer Centre signage, once a prominent fixture of the mall, now finds itself relegated to the mall’s depths or tucked discreetly behind elevator doors.</p>
+<img alt="The upper floors of the renowned shopping centre were sparse this week. Picture: Lyndon Mechielsen/Courier Mail" class="responsive-img_img inline-image" height="auto" loading="lazy" sizes="150px" src="https://content.api.news/v3/images/bin/3b8aa6902e162ed5ee1ae09cb0a4ee3e" width="100%"/>
+<p>Myer’s Queen St location, which has been a symbol of the city for more than three decades, has been shuttered after talks between the store and landlord broke down.</p>
+<p>“While we remain committed to the Brisbane market, we have been unable to negotiate a reasonable commercial outcome with the landlord and as such will continue to look for an alternative CBD location,” Myer chief executive John King said in a statement in March.</p>
+<p>“We thank our team members for their service and will be providing redeployment opportunities at nearby stores.”</p>
+<p>First opened in 1988 in time for World Expo ’88, the centre was Myer’s flagship store in Queensland and Australia’s second-largest department store.</p>
+<p>There had been rumours that Griffith University would step forward to take over the space.</p>
+<p>However, a statement from the uni put an end to the rumours surrounding the location of its new campus.</p>
+<p>“The Myer Centre is not one of the short-listed options,” the university clarified.</p>
+<img alt="As the dust settles, Queen Street Mall, now known as ‘Uptown’, has undergone a pastel-hued transformation, but shoppers say it’ll take more than a trendy colour scheme to lure them back." class="responsive-img_img inline-image" height="auto" loading="lazy" sizes="150px" src="https://content.api.news/v3/images/bin/2442d4b64d22e4264ed1b1063ae8445d" width="100%"/>
+<p>The retail shake-up comes as Aussies all around the country grapple with the mounting cost of living crisis, with many families forced to forego pleasure purchases as mortgage repayments soar through the roof.</p>
+<p>Aussies are now cutting back on non-essentials — especially furniture and clothes, according to recent statistics.</p>
+<p>The Australian Bureau of Statistics (ABS) monthly household spending indicator report, released Tuesday, shows overall household spending was up 3.3 per cent in May, compared to the same time last year.</p>
+<p>The overall household spending increase was driven by services; spending on hotels, cafes, and restaurants was up 7.8 per cent, and transport spending rose 7.7 per cent, accounting for an overall increase of 7.2 per cent in the services category.</p>
+<p>Goods spending was down 0.9 per cent, but cash spent on food was the only increase (up 5.8 per cent) thanks to May’s CPI report showing the cost of food rose 7.9 per cent in the same period.</p>
+<p>It has even had an effect on how families eat.</p>
+<p>New research revealed cost of living pressures are forcing diet-conscious Australians to pick cheaper sources of protein.</p>
+<p>The research, commissioned by nutrition and food tracking app MyFitnessPal, shows 36 per cent of respondents are now less likely to pick up red meat in their weekly shop, while 33 per cent are shying away from protein bars and shakes.</p>
+		{% endwith %}
+		{% include 'featured.html' %}
+		{% include 'categories.html' %}
+	{% endblock %}
+

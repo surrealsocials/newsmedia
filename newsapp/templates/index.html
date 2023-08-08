@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+
+        <meta charset="utf-8">
+        <title>NEWSROOM</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free HTML Templates" name="keywords">
+        <meta content="Free HTML Templates" name="description">
+        {% include 'myhead.html' %}
+    </head>
+
+    <body >
+        {% include 'topbar.html' %}
+        {% include 'navbar.html' %}
+        {% include 'topslider.html' %}
+        {% include 'mainslider.html' %}
+        {% include 'featured.html' %}
+        {% include 'categories.html' %}
+        {% include 'newsandside.html' %}
+        {% include 'footer.html' %}
+        {% include 'foot.html' %}
+    </body>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/static/newsapp/service-worker.js')
+        .then(registration => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(error => {
+          console.log('Service Worker registration failed:', error);
+        });
+      }
+        var storedListJSON = localStorage.getItem('myList');
+        var storedList = JSON.parse(storedListJSON);
+        console.log(storedListJSON)
+    </script>
+</html>

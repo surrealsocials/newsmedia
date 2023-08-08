@@ -1,0 +1,33 @@
+   {% load static %} 
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Django" name="keywords">
+    <meta content="Python" name="description"> 
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'newsapp/img/favicon.png' %}">
+
+    <!--<link href="static/newsapp/img/favicon.png" rel="icon">-->
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">   
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="{% static 'newsapp/lib/owlcarousel/assets/owl.carousel.min.css' %}">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'newsapp/css/style.css' %}" rel="stylesheet">
+
+    <script>
+        // Define the function to be executed when the document is loaded
+        function documentLoaded() {
+            console.log("Document loaded!");
+            // You can put your code here to interact with the loaded elements
+        }
+        // Add an event listener for the 'load' event of the window
+        window.addEventListener("load", documentLoaded);
+    </script>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Articles</title>
+</head>
+<body>
+    <h1>Articles - {{ category }}</h1>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.summary }}</p>
+                <p>Category: {{ article.category }}</p>
+                <p>Category: {{ article.story }}</p>
+                <a href="{{ article.link }}">Read more</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
