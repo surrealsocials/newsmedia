@@ -7,13 +7,14 @@ app_name = 'newsapp'  # Set the app namespace
 
 urlpatterns = [
     path('cube.html', views.cube, name='cube'),
-    path('test.html', views.test, name='test'),
+    path('update', views.updater, name='updater'),
     path('base.html', views.base, name='base'),
     path('', views.index, name='index'),
     path('index', views.index, name='index'),
     path('index.html', views.index, name='index'),
     path('article/<slug:url>/', views.single, name='single'),  # Use 'slug' for URL-friendly titles
     path('articles/', views.articles, name='articles'),
+    path('test.html', views.test, name='test'),
     path('articles.html', views.articles, name='articles'),
     path('contact', views.contact, name='contact'),
     path('contact.html', views.contact, name='contact'),

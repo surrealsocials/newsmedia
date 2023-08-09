@@ -13,11 +13,12 @@
                             <img class="img-fluid w-100" src="{{ item.image }}" style="object-fit: cover;">
                             <div class="overlay position-relative bg-light">
                                 <div class="mb-2" style="font-size: 13px;">
-                                    <a href="">{{item.category}}</a>
+                                    <a href="category/{{item.category}}">{{item.category}}</a>
                                     <span class="px-1">/</span>
-                                    <span>{{ item.date|date:'Y-m-d' }}</span>
+                                    <span>{{ item.date|date:'d-m-Y H:i' }}</span>
                                 </div>
                                 <a class="h4 m-0" href="{{item.url}}">{{item.title}}</a>
+                                <p class="m-0">{{item.description}}</p>
                             </div>
                         </div>
                         {% endfor %}      
@@ -33,11 +34,12 @@
                             <img class="img-fluid w-100" src="{{ item.image }}" style="object-fit: cover;">
                             <div class="overlay position-relative bg-light">
                                 <div class="mb-2" style="font-size: 13px;">
-                                    <a href="{{item.url}}">{{item.category}}</a>
+                                    <a href="category/{{item.category}}">{{item.category}}</a>
                                     <span class="px-1">/</span>
-                                    <span>{{ item.date|date:'Y-m-d' }}</span>
+                                    <span>{{ item.date|date:'d-m-Y H:i' }}</span>
                                 </div>
                                 <a class="h4 m-0" href="{{item.url}}">{{item.title}}</a>
+                                <p class="m-0">{{item.description}}</p>
                             </div>
                         </div>
                         {% endfor %}  
@@ -63,11 +65,12 @@
                             <img class="img-fluid w-100" src="{{ item.image }}" style="object-fit: cover;">
                             <div class="overlay position-relative bg-light">
                                 <div class="mb-2" style="font-size: 13px;">
-                                    <a href={{item.url}}>{{item.category}}</a>
+                                    <a href="category/{{item.category}}">{{item.category}}</a>
                                     <span class="px-1">/</span>
-                                    <span>{{ item.date|date:'Y-m-d' }}</span>
+                                    <span>{{ item.date|date:'d-m-Y H:i' }}</span>
                                 </div>
                                 <a class="h4 m-0" href="{{item.url}}">{{ item.title }}</a>
+                                <p class="m-0">{{item.description}}</p>
                             </div>
                         </div>
                         {% endfor %}      
@@ -83,11 +86,12 @@
                             <img class="img-fluid w-100" src="{{ item.image }}" style="object-fit: cover;">
                             <div class="overlay position-relative bg-light">
                                 <div class="mb-2" style="font-size: 13px;">
-                                    <a href={{item.url}}>{{item.category}}</a>
+                                    <a href="category/{{item.category}}">{{item.category}}</a>
                                     <span class="px-1">/</span>
-                                    <span>{{ item.date|date:'Y-m-d' }}</span>
+                                    <span>{{ item.date|date:'d-m-Y H:i' }}</span>
                                 </div>
                                 <a class="h4 m-0" href="{{item.url}}">{{item.title}}</a>
+                                <p class="m-0">{{item.description}}</p>
                             </div>
                         </div>
                         {% endfor %}  

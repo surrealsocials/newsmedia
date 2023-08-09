@@ -39,14 +39,14 @@
                             <h3 class="m-0">Newsletter</h3>
                         </div>
                         <div class="bg-light text-center p-4 mb-3">
-                            <p>Aliqu justo et labore at eirmod justo sea erat diam dolor diam vero kasd</p>
+                            <p>Sign up for the latest in news</p>
                             <div class="input-group" style="width: 100%;">
                                 <input type="text" class="form-control form-control-lg" placeholder="Your Email">
                                 <div class="input-group-append">
                                     <button class="btn btn-primary">Sign Up</button>
                                 </div>
                             </div>
-                            <small>Sit eirmod nonumy kasd eirmod</small>
+                            <small></small>
                         </div>
                     </div>
                     <!-- Newsletter End -->
@@ -69,8 +69,8 @@
                             <h3 class="m-0">Tags</h3>
                         </div>
                         <div class="d-flex flex-wrap m-n1">
-                            {% for tag in tags|slice:":30" %}
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">{{tag}}</a>
+                            {% for item in cats %}
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">{{item}}</a>
                             {% endfor %}
 
                         </div>

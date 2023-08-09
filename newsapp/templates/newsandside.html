@@ -1,180 +1,48 @@
  <!-- News With Sidebar Start -->
  {% load static %}
-    <div class="container-fluid py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="row mb-3">
-                        <div class="col-12">
-                            <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-                                <h3 class="m-0">Popular</h3>
-                                <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative mb-3">
-                                <img class="img-fluid w-100" src="{{ featured_items.0.image }}" style="object-fit: cover;">
-                                <div class="overlay position-relative bg-light">
-                                    <div class="mb-2" style="font-size: 14px;">
-                                        <a href="">{{featured_items.0.category}}</a>
-                                        <span class="px-1">/</span>
-                                        <span>{{ featured_items.0.date }}</span>
-                                    </div>
-                                    <a class="h4" href="{{featured_items.0.url}}">{{featured_items.0.title}}</a>
-                                    <p class="m-0">{{featured_items.0.summary}}</p>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-3">
-                                <img src="{{ featured_items.1.image }}" style="width: 100px; height: 100px; object-fit: cover;">
-                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                    <div class="mb-1" style="font-size: 13px;">
-                                        <a href="">{{featured_items.1.category}}</a>
-                                        <span class="px-1">/</span>
-                                        <span>{{ featured_items.1.date }}</span>
-                                    </div>
-                                    <a class="h6 m-0" href="{{featured_items.1.url}}">{{featured_items.1.title}}</a>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-3">
-                                <img src="{{ featured_items.11.image }}" style="width: 100px; height: 100px; object-fit: cover;">
-                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                    <div class="mb-1" style="font-size: 13px;">
-                                        <a href="">{{featured_items.2.category}}</a>
-                                        <span class="px-1">/</span>
-                                        <span>{{ featured_items.11.date }}</span>
-                                    </div>
-                                    <a class="h6 m-0" href="{{featured_items.11.url}}">{{featured_items.11.title}}</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative mb-3">
-                                <img class="img-fluid w-100" src="{{ featured_items.2.image }}" style="object-fit: cover;">
-                                <div class="overlay position-relative bg-light">
-                                    <div class="mb-2" style="font-size: 14px;">
-                                        <a href="">{{featured_items.2.category}}</a>
-                                        <span class="px-1">/</span>
-                                        <span>{{ featured_items.2.date }}</span>
-                                    </div>
-                                    <a class="h4" href="{{featured_items.2.url}}">{{ featured_items.3.title }}</a>
-                                    <p class="m-0">{{ featured_items.2.summary }}</p>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-3">
-                                <img src="{{ featured_items.3.image }}" style="width: 100px; height: 100px; object-fit: cover;">
-                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                    <div class="mb-1" style="font-size: 13px;">
-                                        <a href="">{{ featured_items.3.category }}</a>
-                                        <span class="px-1">/</span>
-                                        <span>{{ featured_items.3.date }}</span>
-                                    </div>
-                                    <a class="h6 m-0" href="{{featured_items.3.url}}">{{ featured_items.3.title }}</a>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-3">
-                                <img src="{{ featured_items.4.image }}" style="width: 100px; height: 100px; object-fit: cover;">
-                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                    <div class="mb-1" style="font-size: 13px;">
-                                        <a href="">{{ featured_items.4.category }}</a>
-                                        <span class="px-1">/</span>
-                                        <span>{{ featured_items.4.date }}</span>
-                                    </div>
-                                    <a class="h6 m-0" href="{{featured_items.4.url}}">{{ featured_items.4.title }}</a>
-                                </div>
-                            </div>
+<div class="container-fluid py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+                            <h3 class="m-0">Popular</h3>
+                            <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
                         </div>
                     </div>
-                    
-                    <div class="mb-3 pb-3">
-                        <a href=""><img class="img-fluid w-100" src="{% static 'newsapp/img/ads-700x70.jpg' %}" alt=""></a>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-                                <h3 class="m-0">Latest</h3>
-                                <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative mb-3">
-                                <img class="img-fluid w-100" src="{{ featured_items.5.image }}" style="object-fit: cover;">
-                                <div class="overlay position-relative bg-light">
-                                    <div class="mb-2" style="font-size: 14px;">
-                                        <a href="">{{ featured_items.5.category}}</a>
-                                        <span class="px-1">/</span>
-                                        <span>{{ featured_items.5.date }}</span>
-                                    </div>
-                                    <a class="h4" href="{{featured_items.5.url}}">{{ featured_items.5.title}}</a>
-                                    <p class="m-0">{{ featured_items.5.description}}</p>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-3">
-                                <img src="{{ featured_items.6.image }}" style="width: 100px; height: 100px; object-fit: cover;">
-                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                    <div class="mb-1" style="font-size: 13px;">
-                                        <a href="">{{ featured_items.6.category }}</a>
-                                        <span class="px-1">/</span>
-                                        <span>{{ featured_items.6.date }}</span>
-                                    </div>
-                                    <a class="h6 m-0" href="{{featured_items.6.url}}">{{ featured_items.6.title }}</a>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-3">
-                                <img src="{{ featured_items.7.image }}" style="width: 100px; height: 100px; object-fit: cover;">
-                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                    <div class="mb-1" style="font-size: 13px;">
-                                        <a href="">{{ featured_items.7.category }}</a>
-                                        <span class="px-1">/</span>
-                                        <span>{{ featured_items.7.date }}</span>
-                                    </div>
-                                    <a class="h6 m-0" href="{{featured_items.7.url}}">{{ featured_items.7.title }}</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="position-relative mb-3">
-                                <img class="img-fluid w-100" src="{{ featured_items.8.image }}" style="object-fit: cover;">
-                                <div class="overlay position-relative bg-light">
-                                    <div class="mb-2" style="font-size: 14px;">
-                                        <a href="">{{ featured_items.8.category }}</a>
-                                        <span class="px-1">/</span>
-                                        <span>{{ featured_items.8.date }}</span>
-                                    </div>
-                                    <a class="h4" href="{{featured_items.8.url}}">{{ featured_items.8.title }}</a>
-                                    <p class="m-0">{{ featured_items.8.description }}</p>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-3">
-                                <img src="{{ featured_items.9.image }}" style="width: 100px; height: 100px; object-fit: cover;">
-                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                    <div class="mb-1" style="font-size: 13px;">
-                                        <a href="">{{ featured_items.9.category }}</a>
-                                        <span class="px-1">/</span>
-                                        <span>{{ featured_items.9.date }}</span>
-                                    </div>
-                                    <a class="h6 m-0" href="{{featured_items.9.url}}">{{ featured_items.9.title }}</a>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-3">
-                                <img src="{{ featured_items.10.image }}" style="width: 100px; height: 100px; object-fit: cover;">
-                                <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                    <div class="mb-1" style="font-size: 13px;">
-                                        <a href="">{{ featured_items.10.category }}</a>
-                                        <span class="px-1">/</span>
-                                        <span>{{ featured_items.10.date }}</span>
-                                    </div>
-                                    <a class="h6 m-0" href="{{featured_items.10.url}}">{{ featured_items.10.title }}</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                {% with latest|slice:"6:9" as item %}
+                {% include 'doubles.html' %}
+                {% endwith %}
+                {% with latest|slice:"9:12" as item %}
+                {% include 'doubles.html' %}
+                {% endwith %}
                 </div>
-                <!-- News With Sidebar end -->
-
-                {% include 'sidebar.html' %}        
+                
+                <div class="mb-3 pb-3">
+                    <a href=""><img class="img-fluid w-100" src="{% static 'newsapp/img/ads-700x70.jpg' %}" alt=""></a>
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+                            <h3 class="m-0">Latest</h3>
+                            <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+                        </div>
+                    </div>
+                    
+                    {% with latest|slice:"0:3" as item %}
+                    {% include 'doubles.html' %}
+                    {% endwith %}
+                    {% with latest|slice:"3:6" as item %}
+                    {% include 'doubles.html' %}
+                    {% endwith %}
+                </div>
             </div>
+
+            <!-- News With Sidebar end -->
+            {% include 'sidebar.html' %}        
         </div>
     </div>
-    </div>
-    <!-- News With Sidebar End -->
+</div>
+<!-- News With Sidebar End -->

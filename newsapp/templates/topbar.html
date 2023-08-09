@@ -7,19 +7,30 @@
                     <div class="bg-primary text-white text-center py-2" style="width: 100px;">Trending</div>
                     <div class="owl-carousel owl-carousel-1 tranding-carousel position-relative d-inline-flex align-items-center ml-3" style="width: calc(100% - 100px); padding-left: 90px;">
 
-                        <div class="text-truncate"><a class="text-secondary" href="{{featured_items.0.link}}">{{featured_items.0.description}}</a></div>
-                        <div class="text-truncate"><a class="text-secondary" href="{{featured_items.0.link}}">{{featured_items.0.description}}</a></div>
+                        <div class="text-truncate"><a class="text-secondary" href="{{featured_items.0.url}}">{{featured_items.0.description}}</a></div>
+                        <div class="text-truncate"><a class="text-secondary" href="{{featured_items.1.url}}">{{featured_items.1.description}}</a></div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 text-right d-none d-md-block">
-                Monday, January 01, 2045
+                <h6 id="currentDate"></h6>
             </div>
+                <script>
+                    // Get the current date
+                    var currentDate = new Date();
+
+                    // Format the date (year, month, day)
+                    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+                    var formattedDate = currentDate.toLocaleDateString('en-AU', options);
+
+                    // Display the current date in the "currentDate" paragraph
+                    document.getElementById("currentDate").textContent = formattedDate;
+                </script>
         </div>
         <div class="row align-items-center py-2 px-lg-5">
             <div class="col-lg-4">
                 <a href="{{ ROOTDOMAIN }}/index" class="navbar-brand d-none d-lg-block">
-                    <h1 class="m-0 display-5 text-uppercase"><span class="text-primary">News</span>Room</h1>
+                    <h1 class="m-0 display-5 text-uppercase"><span class="text-primary">News</span>Media</h1>
                 </a>
             </div>
             <div class="col-lg-8 text-center text-lg-right">

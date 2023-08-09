@@ -1,0 +1,36 @@
+<div class="col-lg-6">
+    <div class="position-relative mb-3">
+        <img class="img-fluid w-100" src="{{ item.0.image }}" style="object-fit: cover;">
+        <div class="overlay position-relative bg-light">
+            <div class="mb-2" style="font-size: 14px;">
+                <a href="category/{{item.0.category}}">{{item.0.category}}</a>
+                <span class="px-1">/</span>
+                <span>{{ item.0.date }}</span>
+            </div>
+            <a class="h4" href="{{item.0.url}}">{{item.0.title}}</a>
+            <p class="m-0">{{item.0.description}}</p>
+        </div>
+    </div>
+    <div class="d-flex mb-3">
+        <img src="{{ item.1.image }}" style="width: 100px; height: 100px; object-fit: cover;">
+        <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+            <div class="mb-1" style="font-size: 13px;">
+                <a href="category/{{item.1.category}}">{{item.1.category}}</a>
+                <span class="px-1">/</span>
+                <span>{{ item.1.date }}</span>
+            </div>
+            <a class="h6 m-0" href="{{item.1.url}}">{{item.1.title}}</a>
+        </div>
+    </div>
+    <div class="d-flex mb-3">
+        <img src="{{ item.2.image }}" style="width: 100px; height: 100px; object-fit: cover;">
+        <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
+            <div class="mb-1" style="font-size: 13px;">
+                <a href="category/{{item.2.category}}">{{item.2.category}}</a>
+                <span class="px-1">/</span>
+                <span>{{ item.2.date }}</span>
+            </div>
+            <a class="h6 m-0" href="{{item.2.url}}">{{item.2.title}}</a>
+        </div>
+    </div>
+</div>

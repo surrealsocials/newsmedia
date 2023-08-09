@@ -6,7 +6,7 @@ from .models import NewsArticle
 from .utils import getarticle,formatme  # Assuming you have a utils module for getarticle function
 from .utils import update
 from django.utils.text import slugify  # Import slugify function
-import base64,random
+import base64,random,math
 from unidecode import unidecode
 from django.http import HttpResponse
 from datetime import datetime, timedelta
@@ -26,10 +26,10 @@ class NewsArticleSitemap(Sitemap):
 
 cats=['Finance','Entertainment','Sport','Technology','World','Lifestyle']
 tags=set()
-Finance= NewsArticle.objects.filter(category="Finance")
-Technology=  NewsArticle.objects.filter(category="Technology") 
-Entertainment=  NewsArticle.objects.filter(category="Entertainment")
-Sport= NewsArticle.objects.filter(category="Sport") 
+Finance= NewsArticle.objects.filter(category="Finance").order_by('-date')
+Technology=  NewsArticle.objects.filter(category="Technology").order_by('-date')
+Entertainment=  NewsArticle.objects.filter(category="Entertainment").order_by('-date')
+Sport= NewsArticle.objects.filter(category="Sport").order_by('-date')
 global categories
 categories=[Entertainment,Technology,Finance,Sport]
 featured_items=Sport
@@ -38,6 +38,9 @@ featured_items=Sport
 global globallastupdate
 globallastupdate=datetime.now()
 update()
+
+
+
 
 
 def my_view(request):
@@ -68,17 +71,17 @@ def index(request):
     print("globallastupdate:",globallastupdate)
 
     cats=['Finance','Entertainment','Sport','Technology','World','Lifestyle']
-    categories=[cats[0],cats[1],cats[2],cats[3]]
+    #categories=[cats[0],cats[1],cats[2],cats[3]]
 
-
-    categories[0] = NewsArticle.objects.filter(category=cats[0]).order_by('?')
-    categories[1]=  NewsArticle.objects.filter(category=cats[1]).order_by('?')
-    categories[2]=  NewsArticle.objects.filter(category=cats[2]).order_by('?')
-    categories[3]= NewsArticle.objects.filter(category=cats[3]).order_by('?')
+    Finance = NewsArticle.objects.filter(category='Finance').order_by('-date')
+    Entertainment=  NewsArticle.objects.filter(category='Entertainment').order_by('-date')
+    Sport=  NewsArticle.objects.filter(category='Sport').order_by('-date')
+    Technology= NewsArticle.objects.filter(category="Technology").order_by('-date')
+    lifestyle= NewsArticle.objects.filter(category="Lifestyle").order_by('-date')
+    world=NewsArticle.objects.filter(category="world").order_by('-date')
+    articles = NewsArticle.objects.all().order_by('-date')
     featured_items=Sport
-    lifestyle=Entertainment
-    world=Finance
-    articles = NewsArticle.objects.all().order_by('?')
+    latest=articles
 
     return render(request, 'index.html', {
         'cats': cats,
@@ -90,8 +93,13 @@ def index(request):
         'Sport':Sport,
         'Entertainment':Entertainment,
         'Technology':Technology,
-        'articles':articles
+        'articles':articles,
+        'latest':latest
     })
+
+def updater(request):
+    update()
+    return HttpResponse(f"DB updated")
 
 def single(request, url):
     cats=['Finance','Entertainment','Sport','Technology','World','Lifestyle']
@@ -131,24 +139,35 @@ def test(request):
     categories=[]
     articles = NewsArticle.objects.all()
     for cat in cats:
-        categories += NewsArticle.objects.filter(category=cat)
+        categories += NewsArticle.objects.filter(category=cat).order_by('-date')
     return render(request, 'test.html',{'articles':articles,'categories':categories})
 
 def cattyo(request):
     categories=[]
     articles = NewsArticle.objects.all()
     for cat in cats:
-        categories += NewsArticle.objects.filter(category=cat)
+        categories += NewsArticle.objects.filter(category=cat).order_by('-date')
     return render(request, 'category.html',{'articles':articles,'categories':categories})
 
 def articles(request):
-    articles = NewsArticle.objects.all()
-    articles = NewsArticle.objects.order_by('?')
+    page_number = request.GET.get('page', 1)
+    page_number=int(page_number)
+    articles = NewsArticle.objects.order_by('-date')
+    artamount=len(articles)
+    maxpages=artamount/16
+    maxpages= math.ceil(maxpages)
 
-    return render(request, 'allarticles.html',{'articles':articles,'categories':categories,'cats':cats,'featured_items':featured_items})
+    articles=articles[(int(page_number)-1)*16:]
+    pages=[]
+    for p in range(1,maxpages):
+        pages.append({"number":str(p),"active":"page-item"})
+    pages[int(page_number)-1]["active"]="page-item active"
+    print(request)
+
+    return render(request, 'allarticles.html',{'articles':articles,'categories':categories,'cats':cats,'featured_items':featured_items,'pages':pages,"maxpages":10})
 
 def articleslist(request):
-    articles = NewsArticle.objects.all()
+    articles = NewsArticle.objects.all().order_by('-date')
     article_dicts = [{
         'title': article.title,
         'summary': article.subtitle,
@@ -163,12 +182,28 @@ def service_worker(request):
     return render(request, 'service-worker.js', content_type='application/javascript')
 
 def catty(request, category):
+    page_number = request.GET.get('page', 1)
+    page_number=int(page_number)
     tags=set()
-    articles = NewsArticle.objects.filter(category=category)
+
+    articles = NewsArticle.objects.filter(category=category).order_by('-date')
+    artamount=len(articles)
+    maxpages=artamount/16
+    maxpages= math.ceil(maxpages)
+
+    articles=articles[(int(page_number)-1)*16:]
+    pages=[]
+    for p in range(1,maxpages):
+        pages.append({"number":str(p),"active":"page-item"})
+    pages[int(page_number)-1]["active"]="page-item active"
+    print(request)
+
     return render(request, 'category.html', {
         'cats': cats,
         'articles': articles,
-        'category':category
+        'category':category,
+        'pages':pages,
+        'page_number':int(page_number)
     })
 
 def redir(request, page):

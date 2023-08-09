@@ -52,6 +52,7 @@ def getarticle(url):
     soup = BeautifulSoup(html_content, 'html.parser')
     soup2=soup.find('div', id='story-primary')
     #print(soup)
+    if not soup2:return [f"<a href={url}>{url}</a>"]
     content_list = [str(tag) for tag in soup2.find_all(['p', 'img'])]
     #print(content_list)
     newlist=[]
