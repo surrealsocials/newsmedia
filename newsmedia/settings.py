@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-z*_ctwqikau)jbc_o&1b!!w@7r!$9)7iqn6^z!r!d0dp13+$x*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://127.0.0.1','http://127.0.0.1','127.0.0.1']
+ALLOWED_HOSTS = ['https://127.0.0.1','http://127.0.0.1','127.0.0.1','https://newsmedia-f74e47f53ee6.herokuapp.com']
 
 ROOTDOMAIN="https://127.0.0.1:8000"
 # Application definition
